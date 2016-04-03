@@ -50,7 +50,7 @@ public class Dijkstra {
             }
         }
 
-        if (value==-1||cost==Integer.MAX_VALUE){throw new RuntimeException("getNext failed!");}
+        if (value==-1||cost==Integer.MAX_VALUE){throw new RuntimeException("getNext failed, Destination was unreachable");}
         return value;
     }
 
