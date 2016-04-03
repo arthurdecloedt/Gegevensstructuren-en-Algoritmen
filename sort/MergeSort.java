@@ -2,12 +2,11 @@ package sort;
 
 
 import java.lang.reflect.Array;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import static sort.SortUsefull.less;
 
 public class MergeSort {
 
@@ -18,6 +17,7 @@ public class MergeSort {
         if (array==null) throw new IllegalArgumentException("array is null");
         if (array.length<=1) return;
         mergesort(array,0,array.length-1);
+
 
 
     }
@@ -62,6 +62,12 @@ public class MergeSort {
             k++;
         }
 
+    }
+    public BigInteger count;
+    public boolean less(Comparable comp1,Comparable comp2){
+        this.count=this.count.add(BigInteger.ONE);
+        if (this.count.remainder(BigInteger.valueOf(1000000)).equals(BigInteger.ZERO)) System.out.println(count.toString());
+        return SortUsefull.less(comp1,comp2);
     }
 
 }
